@@ -5,14 +5,16 @@ import 'device.dart';
 class MySizes {
   const MySizes();
 
+  static final Device _device = Device.instance();
+
   static const double mainHorizontalMargin = 20;
   static const double mainVerticalMargin = 30;
   static const double gradientVerticalMargin = 50;
 
   static const double bottomWidgetHeightModal = 100;
 
-  static double menuItemWidgth = (Device.instance.screenWidth - (mainHorizontalMargin * 2) - 20)/3;
-  static double menuItemHeight = Device.instance.screenHeight * .15;
+  static double menuItemWidgth = (_device.screenWidth - (mainHorizontalMargin * 2) - 20)/3;
+  static double menuItemHeight = _device.screenHeight * .15;
 
   static double buttonHeight = 40;
 

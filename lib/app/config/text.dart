@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 class MyText {
   MyText({
-    this.default1,
-    this.default2,
-    this.headline1,
-    this.headline2,
-    this.headline3,
-    this.headline4,
-    this.headline5,
-    this.headline6,
-    this.label1,
-    this.label2,
-    this.label3,
-    this.subtitle1,
+    this.default1 = const TextStyle(),
+    this.default2 = const TextStyle(),
+    this.headline1 = const TextStyle(),
+    this.headline2 = const TextStyle(),
+    this.headline3 = const TextStyle(),
+    this.headline4 = const TextStyle(),
+    this.headline5 = const TextStyle(),
+    this.headline6 = const TextStyle(),
+    this.label1 = const TextStyle(),
+    this.label2 = const TextStyle(),
+    this.label3 = const TextStyle(),
+    this.subtitle1 = const TextStyle(),
   });
 
   final TextStyle default1;

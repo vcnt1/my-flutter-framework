@@ -6,11 +6,11 @@ import 'package:xepa/app/service/user_service.dart';
 
 class UserRepository {
   final UserService _userService = UserService();
-  SharedPreferences _sharedPreferences;
+  // SharedPreferences _sharedPreferences;
 
   Future<dynamic> logIn({
-    @required String email,
-    @required String senha,
+    required String email,
+    required String senha,
   }) async {
     final response = await _userService.logIn(email, senha);
 

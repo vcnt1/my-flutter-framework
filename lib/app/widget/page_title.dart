@@ -2,12 +2,12 @@ import 'package:xepa/app/config//theme.dart';
 import 'package:flutter/material.dart';
 
 class PageTitle extends StatelessWidget {
-  PageTitle({Key key, @required this.title}) : super(key: key);
+  PageTitle({Key? key, required this.title}) : super(key: key);
 
-  PageTitle.custom({Key key, @required this.title, this.subtitle}) : super(key: key);
+  PageTitle.custom({Key? key, required this.title, required this.subtitle}) : super(key: key);
 
   final String title;
-  String subtitle;
+  String? subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +22,10 @@ class PageTitle extends StatelessWidget {
           ),
           subtitle != null
               ? Text(
-                  subtitle,
+                  subtitle ?? '',
                   style: MyTheme.typographyWhite.headline5.copyWith(fontWeight: FontWeight.w600),
                 )
-              : SizedBox(),
+              : const SizedBox(),
         ],
       ),
     );

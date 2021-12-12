@@ -1,16 +1,15 @@
-import 'package:xepa/app/helper/application_helper.dart';
 import 'package:xepa/app/config//config.dart';
 import 'package:flutter/material.dart';
 
 class MyCustomInput extends StatelessWidget {
-  MyCustomInput({Key key, @required this.value, @required this.onTap}) : super(key: key);
+  const MyCustomInput({Key? key, required this.value, required this.onTap}) : super(key: key);
 
   final String value;
   final Function onTap;
 
   @override
   Widget build(BuildContext context) => InkWell(
-      onTap: onTap,
+      onTap: () => onTap,
       child: Container(
         height: 50,
         decoration: MyDecoration.defaultInput,

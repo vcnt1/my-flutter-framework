@@ -10,7 +10,7 @@ import 'session/bloc/session_barrel.dart';
 final GlobalKey<NavigatorState> innerNavigator = GlobalKey<NavigatorState>();
 
 class InnerPage extends StatelessWidget {
-  InnerPage({Key key}) : super(key: key);
+  InnerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

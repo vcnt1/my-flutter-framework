@@ -3,31 +3,39 @@ import 'package:flutter/material.dart';
 enum BuildMode { DEBUG, PROFILE, RELEASE }
 
 class Device {
-  Device._privateConstructor();
+  static Device? _instance;
 
-  static final Device _instance = Device._privateConstructor();
+  Device._(this.mediaQueryData) {
+    loadValues();
+  }
 
-  static Device get instance => _instance;
+  factory Device(MediaQueryData mediaQueryData) {
+    _instance ??= Device._(mediaQueryData);
+    return _instance!;
+  }
+
+  factory Device.instance() {
+    return _instance!;
+  }
 
   bool unloaded = true;
-  MediaQueryData _mediaQueryData;
-  double screenWidth;
-  double screenHeight;
-  double aspectRatio;
-  double pixelRatio;
-  double safeAreaHorizontal;
-  double safeAreaVertical;
+  MediaQueryData mediaQueryData;
+  double screenWidth = 0;
+  double screenHeight = 0;
+  double aspectRatio = 0;
+  double pixelRatio = 0;
+  double safeAreaHorizontal = 0;
+  double safeAreaVertical = 0;
 
-  void loadSizes(BuildContext context) {
+  void loadValues() {
     if (unloaded) {
       unloaded = false;
-      _mediaQueryData = MediaQuery.of(context);
-      screenWidth = _mediaQueryData.size.width;
-      screenHeight = _mediaQueryData.size.height;
+      screenWidth = mediaQueryData.size.width;
+      screenHeight = mediaQueryData.size.height;
       aspectRatio = screenWidth / screenHeight;
-      safeAreaHorizontal = _mediaQueryData.padding.left + _mediaQueryData.padding.right;
-      safeAreaVertical = _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
-      pixelRatio = _mediaQueryData.devicePixelRatio;
+      safeAreaHorizontal = mediaQueryData.padding.left + mediaQueryData.padding.right;
+      safeAreaVertical = mediaQueryData.padding.top + mediaQueryData.padding.bottom;
+      pixelRatio = mediaQueryData.devicePixelRatio;
     }
   }
 

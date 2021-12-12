@@ -2,13 +2,13 @@ import 'package:equatable/equatable.dart';
 
 class SessionState extends Equatable {
   const SessionState({
-    this.currentUser,
+    required this.currentUser,
   });
 
   final String currentUser;
 
   SessionState copyWith({
-    String currentUser,
+    String? currentUser,
   }) =>
       SessionState(
         currentUser: currentUser ?? this.currentUser,

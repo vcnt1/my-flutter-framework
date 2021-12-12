@@ -2,7 +2,7 @@ import 'package:xepa/app/config//config.dart';
 import 'package:flutter/material.dart';
 
 class MyFab extends StatelessWidget {
-  const MyFab({Key key, @required this.icon, @required this.onTap, this.size = 60.0}) : super(key: key);
+  const MyFab({Key? key, required this.icon, required this.onTap, this.size = 60.0}) : super(key: key);
 
   final IconData icon;
   final double size;
@@ -11,7 +11,7 @@ class MyFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () => onTap,
       highlightColor: Colors.white,
       splashColor: MyColors.lightGreyBlueish,
       child: Container(
@@ -25,7 +25,7 @@ class MyFab extends StatelessWidget {
               color: Colors.black.withOpacity(0.15),
               spreadRadius: 0,
               blurRadius: 4,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),

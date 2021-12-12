@@ -2,7 +2,7 @@ import 'package:xepa/app/config//config.dart';
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  MyButton({Key key, @required this.onTap, this.label, this.child, color}) : super(key: key) {
+  MyButton({Key? key, required this.onTap, required this.label, this.child, color}) : super(key: key) {
     buttonDecoration = BoxDecoration(
       color: color ?? MyColors.greenBlueish,
       borderRadius: BorderRadius.circular(5.0),
@@ -12,7 +12,7 @@ class MyButton extends StatelessWidget {
     splashColor = MyColors.white70;
   }
 
-  MyButton.outlined({Key key, @required this.onTap, this.label, this.child}) : super(key: key) {
+  MyButton.outlined({Key? key, required this.onTap, required this.label, this.child}) : super(key: key) {
     buttonDecoration = BoxDecoration(
       border: Border.all(color: MyColors.lightGrey),
       borderRadius: BorderRadius.circular(5.0),
@@ -22,8 +22,7 @@ class MyButton extends StatelessWidget {
     splashColor = MyColors.lightGrey;
   }
 
-  MyButton.disabled({Key key, @required this.label}) : super(key: key) {
-    onTap = () {};
+  MyButton.disabled({Key? key, required this.label}) : super(key: key) {
     buttonDecoration = BoxDecoration(
       color: MyColors.lightGrey,
       borderRadius: BorderRadius.circular(5.0),
@@ -33,19 +32,19 @@ class MyButton extends StatelessWidget {
     splashColor = MyColors.lightGrey;
   }
 
-  Function onTap;
-  Widget child;
+  Function? onTap;
+  Widget? child;
   String label;
-  BoxDecoration buttonDecoration;
-  TextStyle labelStyle;
-  Color highlightColor;
-  Color splashColor;
+  BoxDecoration? buttonDecoration;
+  TextStyle? labelStyle;
+  Color? highlightColor;
+  Color? splashColor;
 
   @override
   Widget build(BuildContext context) => Ink(
         decoration: buttonDecoration,
         child: InkWell(
-          onTap: onTap,
+          onTap: () => onTap,
           highlightColor: highlightColor,
           splashColor: splashColor,
           child: Container(

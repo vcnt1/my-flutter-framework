@@ -10,28 +10,11 @@ class MyApplicationHelper {
   static String formatMoneyToBr(double value) => NumberFormat("#,##0.00", "pt_BR").format(value);
 
   static double formatWeirdMoneyStringToDouble(String value) {
-    if (value == null) {
-      return 0;
-    }
-
     final String formatedValue = value.replaceAll('R\$', '').replaceAll(',', '').trim();
-
-    if (double.parse(formatedValue, (e) => null) != null) {
-      return double.parse(formatedValue);
-    } else {
-      return 0;
-    }
+    return double.parse(formatedValue);
   }
 
-  static String formatWeirdBandeiraString(String value) {
-    if (String == null) {
-      return null;
-    }
-
-    return value.split('/')[2].split('.')[0];
-  }
-
-  static String formatDateToBr(DateTime date) => date == null ? null : DateFormat('dd/MM/y').format(date);
+  static String formatDateToBr(DateTime date) => DateFormat('dd/MM/y').format(date);
 
   static String customDateFormat(DateTime date) {
     final param = DateTime(date.year, date.month, date.day);
@@ -46,7 +29,7 @@ class MyApplicationHelper {
     }
   }
 
-  static String phraseDateFormat(DateTime date) {
+  static String? phraseDateFormat(DateTime date) {
     final param = DateTime(date.year, date.month, date.day);
     final now = DateTime.now();
 

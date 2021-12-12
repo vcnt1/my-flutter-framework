@@ -3,10 +3,10 @@ import 'package:xepa/app/config/enums.dart';
 import 'error.dart';
 
 class Fetchable{
-  const Fetchable({this.status = FetchStatus.initial, this. error});
+  const Fetchable({this.status = FetchStatus.initial, this.error});
 
   final FetchStatus status;
-  final MyError error;
+  final MyError? error;
 
   bool get isIddle => status == FetchStatus.initial;
 

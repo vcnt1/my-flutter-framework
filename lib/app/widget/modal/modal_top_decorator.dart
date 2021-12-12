@@ -2,7 +2,7 @@ import 'package:xepa/app/config//colors.dart';
 import 'package:flutter/material.dart';
 
 class ModalTopDecorator extends StatelessWidget {
-  const ModalTopDecorator({Key key}) : super(key: key);
+  const ModalTopDecorator({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

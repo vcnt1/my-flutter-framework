@@ -11,17 +11,16 @@ import 'session/bloc/session_barrel.dart';
 final GlobalKey<NavigatorState> outterNavigator = GlobalKey<NavigatorState>();
 
 class OutterPage extends StatelessWidget {
-  OutterPage({Key key}) : super(key: key);
+  OutterPage({Key? key}) : super(key: key);
 
-  void LoadConfigs(BuildContext context) {
-    Device.instance.loadSizes(context);
+  void _loadConfigs(BuildContext context) {
+    Device(MediaQuery.of(context));
     Intl.defaultLocale = 'pt_BR';
   }
 
   @override
   Widget build(BuildContext context) {
-    LoadConfigs(context);
-
+    _loadConfigs(context);
     return RepositoryProvider<UserRepository>(
       create: (context) => UserRepository(),
       child: MultiBlocProvider(

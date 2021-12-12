@@ -6,7 +6,7 @@
 // import 'bloc/session_barrel.dart';
 //
 // class CpfCnpjModal extends StatelessWidget {
-//   const CpfCnpjModal({Key key}) : super(key: key);
+//   const CpfCnpjModal({Key? key}) : super(key: key);
 //
 //   @override
 //   Widget build(BuildContext context) => WillPopScope(

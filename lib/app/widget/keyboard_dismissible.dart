@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KeyboardDismissable extends StatelessWidget {
-  KeyboardDismissable({this.child}) : assert(child != null);
+  const KeyboardDismissable({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 

@@ -2,10 +2,10 @@ import 'package:xepa/app/config//config.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetHeader extends StatelessWidget {
-  const BottomSheetHeader({Key key, @required this.title, this.subtitle}) : super(key: key);
+  const BottomSheetHeader({Key? key, required this.title, this.subtitle}) : super(key: key);
 
   final String title;
-  final String subtitle;
+  final String? subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,9 @@ class BottomSheetHeader extends StatelessWidget {
           style: MyTheme.typographyBlack.headline2,
         ),
         subtitle == null
-            ? SizedBox()
+            ? const SizedBox()
             : Text(
-                subtitle,
+                subtitle ?? '',
                 style: MyTheme.typographyBlack.subtitle1,
               ),
       ],
